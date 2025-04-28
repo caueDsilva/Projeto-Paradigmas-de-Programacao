@@ -22,4 +22,10 @@
  - Para instalar o compilador da linguagem RUST entre no site [aqui](https://www.rust-lang.org/pt-BR/learn/get-started) e baixe o RUSTUP.
  - Tutorial [aqui](https://www.youtube.com/watch?v=2cji8a7CAds&list=PLWmXJQDlXOHX6UdAmXv6euoqDPUtMLpJf&index=2).
 ## Dependências:
- -  
+ -  Pacotes utilizados: pixels = "0.13"
+                        winit = "0.28"
+                        log = "0.4"
+                        env_logger = "0.11"
+                        anyhow = "1.0"
+## Como Rodar:
+Comando para executar: `cargo run`
