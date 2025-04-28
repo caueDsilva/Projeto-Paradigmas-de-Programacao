@@ -19,7 +19,7 @@
  5. Vá ao site do GitHub e abra a PR (Pull Request) ou avise sobre a alteração feita no grupo.
 
  ## Instalando RUST:
- - Para instalar o compilador da linguagem RUST entre no site (aqui)[https://www.rust-lang.org/pt-BR/learn/get-started] e baixe o RUSTUP.
- - Tutorial (aqui)[https://www.youtube.com/watch?v=2cji8a7CAds&list=PLWmXJQDlXOHX6UdAmXv6euoqDPUtMLpJf&index=2].
+ - Para instalar o compilador da linguagem RUST entre no site [aqui](https://www.rust-lang.org/pt-BR/learn/get-started) e baixe o RUSTUP.
+ - Tutorial [aqui](https://www.youtube.com/watch?v=2cji8a7CAds&list=PLWmXJQDlXOHX6UdAmXv6euoqDPUtMLpJf&index=2).
 ## Dependências:
  -  
