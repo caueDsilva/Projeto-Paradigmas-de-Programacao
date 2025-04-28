@@ -1,5 +1,6 @@
 # Arquivos e pastas de build do Cargo
-/target
+target
+Cargo.lock
 
 # Arquivos de backup
 **/*.rs.bk
