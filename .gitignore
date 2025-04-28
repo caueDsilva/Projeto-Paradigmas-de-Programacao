@@ -1,0 +1,19 @@
+# Arquivos e pastas de build do Cargo
+/target
+
+# Arquivos de backup
+**/*.rs.bk
+
+# Configurações de IDEs/editors
+/.idea
+/.vscode
+*.swp
+*.swo
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs e temporários
+*.log
+*.tmp
