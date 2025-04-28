@@ -28,4 +28,4 @@
                         env_logger = "0.11"
                         anyhow = "1.0"
 ## Como Rodar:
-Comando para executar: `cargo run`
+Comando para executar: `cargo run`.
