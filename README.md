@@ -7,9 +7,9 @@
  - git commit -a -m "Texto aqui" -> (m é para mandar msg  ) enviar para o repositorio na nuvem.
  - git push -> envia os arquivos para o git.
  - git pull -> recupera os arquivos modificados do git.
- - git checkout -b "nome da breach" -> cria uma brach.
+ - git checkout -b "nome da branch" -> cria uma branch.
  - git checkout main -> Muda para branch main.
- - git status -> saber em qual brainch vc está e quais arquivos estão modificados.
+ - git status -> saber em qual branch vc está e quais arquivos estão modificados.
  ### Como utilizar os comandos:
  0. Atuliza a branch master/main: `git pull`
  1. Cria uma Branch `git checkout -b "Feat_funcionalidade"`
