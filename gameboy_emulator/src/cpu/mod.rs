@@ -1,6 +1,6 @@
 // Arquitetura do gameboy é similar a arquitetura Z80
 
-use crate::memory::Memory;
+use crate::{cpu, memory::Memory};
 
 pub struct CPU {    // pub = publico
     pub a: u8,      // u8 = 8 bits inteiros ou seja de 0 a 255
@@ -42,4 +42,35 @@ impl CPU {
         byte
     }
 
+    pub fn ADD_A (&mut self,value:u8) {
+        let a: u8 = self.a;
+        let result: u8 = a.wrapping_add(value);
+
+        // Half-carry ocorre se a soma dos 4 bits inferiores ultrapassa 0xF
+        let half_carry: bool = (a & 0x0F) + (value & 0x0F) > 0x0F;
+
+        // Carry ocorre se a soma ultrapassa 0xFF (255)
+        let carry: bool = (a as u16) + (value as u16) > 0xFF;
+
+        self.a = result;
+
+        // Atualiza os flags no registrador F
+        self.f = 0; // zera os flags antes de setar
+
+        if self.a == 0 {
+            self.f |= 0b1000_0000; // Z flag (bit 7)
+        }
+
+        // N flag (bit 6) é 0 para ADD (já está zerado)
+
+        if half_carry {
+            self.f |= 0b0010_0000; // H flag (bit 5)
+        }
+
+        if carry {
+            self.f |= 0b0001_0000; // C flag (bit 4)
+        }
+    }
+
+    
 }
