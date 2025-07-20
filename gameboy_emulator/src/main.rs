@@ -5,23 +5,24 @@ mod mmu;
 mod memory;
 
 use gpu::{GPU, SCREEN_W, SCREEN_H};
+use cpu::CPU;
+use mmu::MMU;
 
 fn main() {
-    // Cria uma nova GPU
     let mut gpu = GPU::new();
+    let mut cpu = CPU::new();
+    let mut mmu = MMU::new();
 
-    // Simula uma tela completa (154 linhas, 456 ciclos por linha)
-    for _ in 0..(154 * 456) {
-        gpu.step(1); // Executa a GPU com um tick por vez
+    for _ in 0..(154 * 456 / 4) {
+        let interrupts = gpu.step(4);
+        mmu.set_interrupts(interrupts);
+        cpu.step(&mut mmu);
     }
 
-    // Salva o conteúdo do framebuffer como imagem PNG
     save_framebuffer_as_png(&gpu.framebuffer.data, SCREEN_W, SCREEN_H, "frame.png");
-
     println!("Renderização concluída. Imagem salva como 'frame.png'.");
 }
 
-// Função auxiliar para salvar o framebuffer em uma imagem PNG
 fn save_framebuffer_as_png(buffer: &[u8], width: usize, height: usize, filename: &str) {
     use image::{Rgb, RgbImage};
 
